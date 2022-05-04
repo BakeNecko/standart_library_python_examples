@@ -1,3 +1,11 @@
+"""
+Модуль weakref обеспечивает поддержку слабых ссылок на объекты.
+Создание обычный сслыки приводит к увеличенияю счётчика ссылок на объект,
+что препядствует его удалению сборщиком мусора.
+
+Особенность слабой ссылки в том, что она позволяет ссылаться на объект,
+не препядствуя его автоматическому удалению.
+"""
 import gc
 import weakref
 from pprint import pprint
@@ -40,7 +48,8 @@ def demo(cache_factory):
     print('demo returning')
     return
 
+if __name__ == '__main__':
 
-demo(dict)
-print('#################')
-demo(weakref.WeakValueDictionary)
+    demo(dict)
+    print('#################')
+    demo(weakref.WeakValueDictionary)
