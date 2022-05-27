@@ -21,8 +21,15 @@ class MyClass:
         print('__deepcopy__({})'.format(memo))
         return MyClass(copy.deepcopy(self.name, memo))
 
-a = MyClass('a')
 
-sc = copy.copy(a)
-dc = copy.deepcopy(a)
+if __name__ == '__main__':
+    a = MyClass('hello')
+    my_list = [a]
+    dup = copy.deepcopy(my_list)
 
+    print('     my_list:', my_list)
+    print('     dup:', dup)
+    print('     dup is my_list:', (dup is my_list))
+    print('     dup == my_list:', (dup == my_list))
+    print('     dup[O] is my_list[0]:', (dup[0] is my_list[0]))  # False
+    print('     dup[O] == my_list[0]:', (dup[0] == my_list[0]))  # True

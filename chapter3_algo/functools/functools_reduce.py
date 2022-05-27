@@ -21,3 +21,19 @@ try:
     print(f'Empty sequence: {functools.reduce(do_reduce, [])}')
 except TypeError as err:
     print(f'ERROR: {err}')
+
+
+class Primes:
+    @staticmethod
+    def stream():
+        numbers = [x for x in range(3, 10001, 2)]  # only odd numbers
+        for i in numbers:
+            numbers = list(filter(lambda x: x % i == 0, numbers))
+        return (i for i in [2] + numbers)
+
+
+if __name__ == '__main__':
+    p = Primes().stream()
+    next(p)
+    next(p)
+    next(p)

@@ -1,18 +1,17 @@
 import functools
 
-
 @functools.singledispatch
 def myfunc(arg):
     print(f'default myfunc({arg})')
 
 
 @myfunc.register(int)
-def myfunc_int(arg):
+def _(arg):  # myfunc_int
     print(f'myfunc_int({arg})')
 
 
 @myfunc.register(list)
-def myfunc_list(arg):
+def _(arg):  # myfunc_list
     print(f'myfunc_list(): {arg}')
 
 

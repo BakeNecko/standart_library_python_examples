@@ -1,5 +1,3 @@
-# Функция permutations () создает итератор, который возвращает все возможные
-# перестановки заданной длины, образуемые из элементов входного итерируемого объекта.
 from itertools import permutations
 
 
@@ -14,8 +12,14 @@ def show(iterable):
     print()
 
 
-print('All permutations:\n')
-show(permutations('abcd'))
+if __name__ == '__main__':
+    """
+    Функция permutations () создает итератор, который возвращает все возможные
+    перестановки заданной длины, образуемые из элементов входного итерируемого объекта.
+    """
 
-print('\nPairs:\n')
-show(permutations('abcd', r=2))
+    print('All permutations:\n')
+    show(permutations('abcd'))
+
+    print('\nPairs:\n')
+    show(permutations('abcd', r=2))
